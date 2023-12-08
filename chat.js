@@ -12,6 +12,8 @@ const newMessage = async (history, message) => {
     messages: [...history, message],
   })
 
+  console.log({ usage: results.usage })
+
   return results.choices[0].message
 }
 
@@ -38,14 +40,14 @@ const chat = () => {
       const response = await newMessage(history, userMessage)
 
       history.push(userMessage, response)
-
+      console.log(`\n\nAI: ${response.content} \n\n`)
       start()
     })
   }
 
   start()
 
-  console.log('\\n\\nAI: How can I help you today?\\n\\n')
+  console.log('\n\nAI: How can I help you today?\n\n')
 }
 
 console.log("Chatbot initialized. Type 'exit' to end the chat.")
