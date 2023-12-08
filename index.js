@@ -13,9 +13,11 @@ const results = await openai.chat.completions.create({
     },
     {
       role: 'user',
-      content: 'Hi!',
+      // Here you go
+      // content: 'Hi my name is Rade.',
+      content: 'What is my name?',
     },
   ],
 })
 
-console.log(JSON.stringify({ results }, null, 2))
+console.log(results.choices[0].message.content)
