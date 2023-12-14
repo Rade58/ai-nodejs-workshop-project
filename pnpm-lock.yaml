@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  advanced-calculator:
+    specifier: ^1.1.1
+    version: 1.1.1
   dotenv:
     specifier: ^16.3.1
     version: 16.3.1
@@ -104,6 +107,10 @@ packages:
     resolution: {integrity: sha512-nc0Axzp/0FILLEVsm4fNwLCwMttvhEI263QtVPQcbpfZZ3ts0hLsZGOpE6czNlid7CJ9MlyH8reXkpsf3YUY4w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: false
+
+  /advanced-calculator@1.1.1:
+    resolution: {integrity: sha512-ak2G4Q0HkPOMrJQU3kyYyIsFHAOkp1vfsCtYF2gwSb8qAWYAmligJjJFesbsgBTDlgKFAm86b6HbGdggXOzxqA==}
     dev: false
 
   /agentkeepalive@4.5.0:
