@@ -14,11 +14,26 @@ const messages = [
 
 const functions = {
   calculate: ({ expression }) => {
-    // added this log
     console.log('hello')
-    //
     return math.evaluate(expression)
   },
+
+  // -----------------------------------------------
+  // -----------------------------------------------
+  // Here you go I added this function tht generates
+  // the image
+  create_image: async ({ prompt }) => {
+    const result = await openai.images.generate({ prompt })
+
+    // added this
+    console.log({ prompt })
+
+    console.log(JSON.stringify({ result }, null, 2))
+
+    return ''
+  },
+  // ---------------------------------------------
+  // ---------------------------------------------
 }
 
 const getCompletion = async (messages) => {
@@ -42,6 +57,26 @@ const getCompletion = async (messages) => {
           required: ['expression'],
         },
       },
+      // -----------------------------------------------
+      // -----------------------------------------------
+      // I added this
+      {
+        name: 'create_image',
+        description: 'Generate or create image based on description.',
+        parameters: {
+          type: 'object',
+          properties: {
+            prompt: {
+              type: 'string',
+              description:
+                "Description of an image to be generated. Example: 'Image of a flying Bosnian train.'",
+            },
+          },
+          required: ['propmpt'],
+        },
+      },
+      // -----------------------------------------------
+      // -----------------------------------------------
     ],
     temperature: 0,
   })
